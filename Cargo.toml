@@ -1,19 +1,19 @@
 [package]
 name = "armature-compression"
 version = "0.2.0"
-edition.workspace = true
-rust-version.workspace = true
-authors.workspace = true
-license.workspace = true
+edition = "2024"
+rust-version = "1.94.1"
+authors = ["Joseph Quinn <quinn.josephr@proton.me>"]
+license = "Apache-2.0"
 repository = "https://github.com/quinnjr/armature-compression"
-homepage.workspace = true
+homepage = "https://quinnjr.github.io/armature"
 description = "HTTP compression middleware with gzip, brotli, and zstd support"
 keywords = ["compression", "gzip", "brotli", "zstd", "middleware"]
 categories = ["compression", "web-programming"]
 
 [dependencies]
 # Core dependencies
-armature-core = { path = "../armature-core", version = "0" }
+armature-core = { version = "0" }
 async-trait = "0.1"
 thiserror = "2.0"
 tracing = "0.1"
