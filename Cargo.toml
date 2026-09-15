@@ -1,19 +1,19 @@
 [package]
 name = "armature-compression"
-version = "0.2.0"
-edition.workspace = true
-rust-version.workspace = true
-authors.workspace = true
-license.workspace = true
+version = "0.4.0"
+edition = "2024"
+rust-version = "1.94.1"
+authors = ["Joseph Quinn <quinn.josephr@proton.me>"]
+license = "Apache-2.0"
 repository = "https://github.com/quinnjr/armature-compression"
-homepage.workspace = true
+homepage = "https://quinnjr.github.io/armature"
 description = "HTTP compression middleware with gzip, brotli, and zstd support"
 keywords = ["compression", "gzip", "brotli", "zstd", "middleware"]
 categories = ["compression", "web-programming"]
 
 [dependencies]
 # Core dependencies
-armature-core = { path = "../armature-core", version = "0" }
+armature-core = { version = "0.10" }
 async-trait = "0.1"
 thiserror = "2.0"
 tracing = "0.1"
@@ -23,10 +23,10 @@ bytes = "1"
 flate2 = { version = "1.1", optional = true }
 
 # Brotli compression (optional)
-brotli = { version = "8.0", optional = true }
+brotli = { version = "9.0", optional = true }
 
 # Zstd compression (optional)
-zstd = { version = "0.13", optional = true }
+zstd = { version = "0.14", optional = true }
 
 [features]
 default = ["gzip", "brotli"]
@@ -37,5 +37,5 @@ full = ["gzip", "brotli", "zstd"]
 
 [dev-dependencies]
 cargo-husky = { version = "1.5", default-features = false, features = ["user-hooks"] }
-tokio = { version = "1.52", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util", "fs", "test-util"] }
+tokio = { version = "1.53", features = ["rt-multi-thread", "macros", "sync", "time", "net", "io-util", "fs", "test-util"] }
 
